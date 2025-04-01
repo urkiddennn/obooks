@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+
+
+.bg-image-pic {
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fillustrations%2Fbook-background&psig=AOvVaw2EZ7Ak_k3FwSJmLqX5x3Ae&ust=1743580077633000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKCon4ystowDFQAAAAAdAAAAABAQ");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
