@@ -1,31 +1,29 @@
 import React, { useState } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input, message } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
-
 
 const RegisterForm = () => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
 
-
-    //onclick navigate to the login form
-    const gotoLogin = () => {
-        navigate("/")
-    }
+    const gotoLogin = (e) => {
+        e.preventDefault();
+        navigate('/');
+    };
 
     const onFinish = async (values) => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:5001/api/users/login', {
+            const response = await fetch('http://localhost:5001/api/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    username: values.username,
+                    email: values.email,
                     password: values.password,
                 }),
             });
@@ -33,19 +31,30 @@ const RegisterForm = () => {
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.message || 'Login failed');
+                throw new Error(data.message || 'Registration failed');
             }
 
             // Success handling
-            message.success('Login successful!');
-            console.log('Login response:', data);
+            message.success('Registration successful!');
+            console.log('Registration response:', data);
+
+            // Store the token in localStorage
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+            } else {
+                console.warn('No token received from server');
+            }
+
+
             form.resetFields();
 
-            // You might want to redirect or store the token here
-            // e.g., localStorage.setItem('token', data.token);
+
+            setTimeout(() => {
+                navigate('/home');
+            }, 1000);
         } catch (error) {
-            message.error(error.message || 'An error occurred during login');
-            console.error('Login error:', error);
+            message.error(error.message || 'An error occurred during registration');
+            console.error('Registration error:', error);
         } finally {
             setLoading(false);
         }
@@ -59,7 +68,7 @@ const RegisterForm = () => {
         <div className="space-y-6">
             <div className="text-center">
                 <h3 className="text-xl font-semibold text-gray-900">Register to Obooks</h3>
-                <p className="text-sm text-gray-500">Please enter your credentials to login</p>
+                <p className="text-sm text-gray-500">Create your account to get started</p>
             </div>
 
             <Form
@@ -72,16 +81,16 @@ const RegisterForm = () => {
                 className="space-y-4"
             >
                 <Form.Item
-                    name="username"
-                    label={<span className="text-gray-700">Username</span>}
+                    name="email"
+                    label={<span className="text-gray-700">Email</span>}
                     rules={[
-                        { required: true, message: 'Please input your Username!' },
-                        { min: 3, message: 'Username must be at least 3 characters' },
+                        { required: true, message: 'Please input your Email!' },
+                        { type: 'email', message: 'Please enter a valid email address!' },
                     ]}
                 >
                     <Input
                         prefix={<UserOutlined className="text-gray-400" />}
-                        placeholder="Enter your username"
+                        placeholder="Enter your email"
                         className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                 </Form.Item>
@@ -100,17 +109,6 @@ const RegisterForm = () => {
                         className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                 </Form.Item>
-
-                {/* <Form.Item>
-                    <div className="flex justify-between items-center">
-                        <Form.Item name="remember" valuePropName="checked" noStyle>
-                            <Checkbox className="text-gray-700">Remember me</Checkbox>
-                        </Form.Item>
-                        <a href="#" className="text-blue-600 hover:underline text-sm">
-                            Forgot password?
-                        </a>
-                    </div>
-                </Form.Item> */}
 
                 <Form.Item>
                     <Button

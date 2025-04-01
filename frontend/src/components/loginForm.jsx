@@ -6,11 +6,12 @@ import { useNavigate } from 'react-router-dom';
 const LoginForm = () => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const gotoRegister = () => {
-        navigate("/register")
-    }
+    const gotoRegister = (e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        navigate('/register');
+    };
 
     const onFinish = async (values) => {
         setLoading(true);
@@ -21,7 +22,7 @@ const LoginForm = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    username: values.username,
+                    email: values.email,
                     password: values.password,
                 }),
             });
@@ -35,10 +36,21 @@ const LoginForm = () => {
             // Success handling
             message.success('Login successful!');
             console.log('Login response:', data);
+
+            // Store the token in localStorage
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+            } else {
+                console.warn('No token received from server');
+            }
+
+            // Reset form fields
             form.resetFields();
 
-            // You might want to redirect or store the token here
-            // e.g., localStorage.setItem('token', data.token);
+            // Redirect to dashboard after login
+            setTimeout(() => {
+                navigate('/home'); // Adjust the route as needed
+            }, 1000); // Small delay to show success message
         } catch (error) {
             message.error(error.message || 'An error occurred during login');
             console.error('Login error:', error);
@@ -68,16 +80,16 @@ const LoginForm = () => {
                 className="space-y-4"
             >
                 <Form.Item
-                    name="username"
-                    label={<span className="text-gray-700">Username</span>}
+                    name="email"
+                    label={<span className="text-gray-700">Email</span>}
                     rules={[
-                        { required: true, message: 'Please input your Username!' },
-                        { min: 3, message: 'Username must be at least 3 characters' },
+                        { required: true, message: 'Please input your Email!' },
+                        { type: 'email', message: 'Please enter a valid email address!' },
                     ]}
                 >
                     <Input
                         prefix={<UserOutlined className="text-gray-400" />}
-                        placeholder="Enter your username"
+                        placeholder="Enter your email"
                         className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                 </Form.Item>
