@@ -198,7 +198,7 @@ app.get("/api/users/me", authenticateToken, async (req, res) => {
 
 //add books to favorites
 app.post("/api/favorites", authenticateToken, async (req, res) => {
-    const { isbn, title, authors, publish_date, cover } = req.body
+    const { isbn, title, authors, publish_date, cover } = req.body;
     try {
         const book = new Books({
             isbn,
@@ -206,14 +206,20 @@ app.post("/api/favorites", authenticateToken, async (req, res) => {
             authors,
             publish_date,
             cover,
-            user: req.user.id
-        })
-        await book.save()
-        res.status(201).json(book)
-    } catch (error) {
-        res.status(500).json({ message: "Error saving books", error: err })
+            user: req.user.id,
+        });
+        await book.save();
+        logger.info(`Book added to favorites for user ${req.user.id}: ${title}`);
+        res.status(201).json(book);
+    } catch (err) {
+        if (err.code === 11000) {
+            logger.warn(`Duplicate book attempt for user ${req.user.id}: ${isbn}`);
+            return res.status(400).json({ error: "Book already in your favorites" });
+        }
+        logger.error(`Error saving book for user ${req.user.id}: ${err.message}`);
+        res.status(500).json({ error: "Error saving book" });
     }
-})
+});
 
 
 

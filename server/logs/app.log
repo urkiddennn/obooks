@@ -180,3 +180,17 @@
 2025-04-01 12:01:17 [INFO]: Connected to mongodb
 2025-04-01 12:01:21 [INFO]: ::1 - - [01/Apr/2025:04:01:21 +0000] "POST /api/users HTTP/1.1" 404 149 "-" "PostmanRuntime/7.43.3"
 2025-04-01 12:01:22 [INFO]: ::1 - - [01/Apr/2025:04:01:22 +0000] "POST /api/users HTTP/1.1" 404 149 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:02:37 [INFO]: Server running on port 5001
+2025-04-01 12:02:38 [INFO]: Connected to mongodb
+2025-04-01 12:02:38 [INFO]: User registered successfully: richard@gmail.com (ID: 67eb655ed69e7c0934972117)
+2025-04-01 12:02:38 [INFO]: ::1 - - [01/Apr/2025:04:02:38 +0000] "POST /api/users HTTP/1.1" 201 311 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:02:42 [INFO]: Retrieved list of all users (total: 1)
+2025-04-01 12:02:42 [INFO]: ::1 - - [01/Apr/2025:04:02:42 +0000] "GET /api/users HTTP/1.1" 200 239 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-01 12:13:35 [INFO]: User logged in successfully: richard@gmail.com (ID: 67eb655ed69e7c0934972117)
+2025-04-01 12:13:35 [INFO]: ::1 - - [01/Apr/2025:04:13:35 +0000] "POST /api/users/login HTTP/1.1" 200 318 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:14:41 [WARN]: Access token missing in request
+2025-04-01 12:14:41 [INFO]: ::1 - - [01/Apr/2025:04:14:41 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:15:15 [WARN]: Access token missing in request
+2025-04-01 12:15:15 [INFO]: ::1 - - [01/Apr/2025:04:15:15 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:15:17 [WARN]: Access token missing in request
+2025-04-01 12:15:17 [INFO]: ::1 - - [01/Apr/2025:04:15:17 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
