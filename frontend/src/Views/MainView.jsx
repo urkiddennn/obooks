@@ -1,65 +1,75 @@
 import React, { useState, useEffect } from 'react';
-import { message } from 'antd';
 import Header from '../components/Header.jsx';
+import { fetchUserData, fetchBooks } from '../api.jsx';
 
 const MainView = () => {
     const [userData, setUserData] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [books, setBooks] = useState([]);
+    const [loadingUser, setLoadingUser] = useState(true);
+    const [loadingBooks, setLoadingBooks] = useState(true);
 
     useEffect(() => {
-        const fetchUserData = async () => {
-            const token = localStorage.getItem('token');
-            if (!token) {
-                message.error('No token found, please log in.');
-                return;
-            }
-
-            try {
-                const response = await fetch('http://localhost:5001/api/users', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`, // Assuming token-based auth
-                    },
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(data.message || 'Failed to fetch user data');
-                }
-
-                // Assuming the response is an array, take the first user
-                const user = Array.isArray(data) && data.length > 0 ? data[0] : null;
-                setUserData(user);
-            } catch (error) {
-                message.error(error.message || 'An error occurred while fetching user data');
-                console.error('Fetch error:', error);
-            } finally {
-                setLoading(false);
-            }
+        const getUserData = async () => {
+            const user = await fetchUserData();
+            setUserData(user);
+            setLoadingUser(false);
         };
 
-        fetchUserData();
+        const getBooks = async () => {
+            const bookList = await fetchBooks('fiction', 6);
+            setBooks(bookList);
+            setLoadingBooks(false);
+        };
+
+        getUserData();
+        getBooks();
     }, []);
 
     return (
         <div className="min-h-screen flex flex-col">
-            <Header
-                email={userData?.email}
-                profilePicture={userData?.profilePicture}
-            />
-            <main className="flex-grow flex flex-col items-center justify-center space-y-6">
-                {loading ? (
-                    <p className="text-gray-600">Loading...</p>
+            <Header email={userData?.email} profilePicture={userData?.profilePicture} />
+            <main className="flex-grow flex flex-col items-center py-8 px-4 space-y-8">
+                {loadingUser ? (
+                    <p className="text-gray-600">Loading user data...</p>
                 ) : (
-                    <>
-                        <h1 className="text-3xl font-bold text-gray-900">
-                            Welcome, {userData?.email || 'User'}!
-                        </h1>
-                        <p className="text-gray-600">This is your dashboard</p>
-                    </>
+                    <h1 className="text-3xl font-bold text-gray-900">
+                        Welcome, {userData?.email || 'User'}!
+                    </h1>
                 )}
+
+                <section className="w-full max-w-5xl">
+                    <h2 className="text-2xl font-semibold text-gray-800 mb-4">Featured Books</h2>
+                    {loadingBooks ? (
+                        <p className="text-gray-600">Loading books...</p>
+                    ) : books.length > 0 ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            {books.map((book) => (
+                                <div
+                                    key={book.key}
+                                    className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center space-y-2 hover:shadow-lg transition-shadow duration-200"
+                                >
+                                    <img
+                                        src={
+                                            book.cover_i
+                                                ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+                                                : 'https://via.placeholder.com/128x192?text=No+Cover'
+                                        }
+                                        alt={book.title}
+                                        className="w-32 h-48 object-cover rounded"
+                                    />
+                                    <h3 className="text-lg font-medium text-gray-900 text-center">
+                                        {book.title}
+                                    </h3>
+                                    <p className="text-sm text-gray-600">
+                                        {book.author_name ? book.author_name.join(', ') : 'Unknown Author'}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <p className="text-gray-600">No books found.</p>
+                    )}
+                </section>
             </main>
         </div>
     );

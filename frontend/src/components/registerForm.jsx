@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../api.jsx';
 
 const RegisterForm = () => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-
 
     const gotoLogin = (e) => {
         e.preventDefault();
@@ -17,44 +17,23 @@ const RegisterForm = () => {
     const onFinish = async (values) => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:5001/api/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: values.email,
-                    password: values.password,
-                }),
-            });
+            const data = await registerUser(values.email, values.password);
 
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Registration failed');
-            }
-
-            // Success handling
             message.success('Registration successful!');
             console.log('Registration response:', data);
 
-            // Store the token in localStorage
             if (data.token) {
                 localStorage.setItem('token', data.token);
             } else {
                 console.warn('No token received from server');
             }
 
-
             form.resetFields();
-
-
             setTimeout(() => {
                 navigate('/home');
             }, 1000);
         } catch (error) {
-            message.error(error.message || 'An error occurred during registration');
-            console.error('Registration error:', error);
+            // Error is already handled in api.jsx, no need to re-handle here unless specific UI logic
         } finally {
             setLoading(false);
         }
@@ -65,7 +44,7 @@ const RegisterForm = () => {
     };
 
     return (
-        <div className="space-y-6">
+        <div className="w-1/4 h-auto flex flex-col justify-center items-center rounded-lg outline-1 p-3">
             <div className="text-center">
                 <h3 className="text-xl font-semibold text-gray-900">Register to Obooks</h3>
                 <p className="text-sm text-gray-500">Create your account to get started</p>
@@ -78,7 +57,7 @@ const RegisterForm = () => {
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
                 layout="vertical"
-                className="space-y-4"
+                className="space-y-4 w-full"
             >
                 <Form.Item
                     name="email"

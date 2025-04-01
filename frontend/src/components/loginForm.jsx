@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../api.jsx';
 
 const LoginForm = () => {
     const [form] = Form.useForm();
@@ -9,51 +10,30 @@ const LoginForm = () => {
     const navigate = useNavigate();
 
     const gotoRegister = (e) => {
-        e.preventDefault(); // Prevent default anchor behavior
+        e.preventDefault();
         navigate('/register');
     };
 
     const onFinish = async (values) => {
         setLoading(true);
         try {
-            const response = await fetch('http://localhost:5001/api/users/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: values.email,
-                    password: values.password,
-                }),
-            });
+            const data = await loginUser(values.email, values.password);
 
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Login failed');
-            }
-
-            // Success handling
             message.success('Login successful!');
             console.log('Login response:', data);
 
-            // Store the token in localStorage
             if (data.token) {
                 localStorage.setItem('token', data.token);
             } else {
                 console.warn('No token received from server');
             }
 
-            // Reset form fields
             form.resetFields();
-
-            // Redirect to dashboard after login
             setTimeout(() => {
-                navigate('/home'); // Adjust the route as needed
-            }, 1000); // Small delay to show success message
+                navigate('/home');
+            }, 1000);
         } catch (error) {
-            message.error(error.message || 'An error occurred during login');
-            console.error('Login error:', error);
+            // Error is already handled in api.jsx, no need to re-handle here unless specific UI logic
         } finally {
             setLoading(false);
         }
@@ -64,7 +44,7 @@ const LoginForm = () => {
     };
 
     return (
-        <div className="space-y-6">
+        <div className="w-1/4 h-auto flex flex-col justify-center items-center rounded-lg outline-1 p-3">
             <div className="text-center">
                 <h3 className="text-xl font-semibold text-gray-900">Welcome Back</h3>
                 <p className="text-sm text-gray-500">Please enter your credentials to login</p>
@@ -77,7 +57,7 @@ const LoginForm = () => {
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
                 layout="vertical"
-                className="space-y-4"
+                className="space-y-4 w-full"
             >
                 <Form.Item
                     name="email"
