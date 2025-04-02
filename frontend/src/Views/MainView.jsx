@@ -11,7 +11,7 @@ const MainView = () => {
     const [loadingBooks, setLoadingBooks] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState('fiction');
     const [selectedSort, setSelectedSort] = useState('title_asc'); // Default sort
-    const currentPages = 10;
+    const currentPages = 10; // number of books to be displayed.
 
     useEffect(() => {
         const getUserData = async () => {

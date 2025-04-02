@@ -363,3 +363,15 @@
 2025-04-02 11:11:31 [INFO]: ::1 - - [02/Apr/2025:03:11:31 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
 2025-04-02 11:13:46 [INFO]: Retrieved list of all users (total: 3)
 2025-04-02 11:13:46 [INFO]: ::1 - - [02/Apr/2025:03:13:46 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:26:15 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:26:15 [INFO]: ::1 - - [02/Apr/2025:03:26:15 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/134.0.0.0"
+2025-04-02 11:26:15 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:26:15 [INFO]: ::1 - - [02/Apr/2025:03:26:15 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/134.0.0.0"
+2025-04-02 11:28:34 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:28:34 [INFO]: ::1 - - [02/Apr/2025:03:28:34 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/134.0.0.0"
+2025-04-02 11:28:34 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:28:34 [INFO]: ::1 - - [02/Apr/2025:03:28:34 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/134.0.0.0"
+2025-04-02 11:32:02 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:32:02 [INFO]: ::1 - - [02/Apr/2025:03:32:02 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:32:47 [INFO]: Server running on port 5001
+2025-04-02 11:32:48 [INFO]: Connected to mongodb
