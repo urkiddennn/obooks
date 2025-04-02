@@ -23,14 +23,14 @@ const Sidebar = ({ selectedCategory, onCategoryChange, selectedSort, onSortChang
         <aside className="w-64 bg-gray-100 p-4 shadow-md">
             {/* Categories Section */}
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Categories</h2>
-            <ul className="space-y-2 mb-6">
+            <ul className="space-y-2 flex flex-wrap space-x-1 mb-6 w-full">
                 {categories.map((category) => (
                     <li key={category}>
                         <button
                             onClick={() => onCategoryChange(category)}
-                            className={`w-full text-left px-4 py-2 rounded ${selectedCategory === category.toLowerCase()
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+                            className={`w-auto text-left px-4 py-2 rounded ${selectedCategory === category.toLowerCase()
+                                ? 'bg-blue-500 text-white'
+                                : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                                 } transition-colors duration-200`}
                         >
                             {category}

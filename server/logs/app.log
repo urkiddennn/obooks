@@ -275,3 +275,89 @@
 2025-04-01 16:33:34 [INFO]: ::1 - - [01/Apr/2025:08:33:34 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
 2025-04-01 16:35:31 [INFO]: Server running on port 5001
 2025-04-01 16:35:31 [INFO]: Connected to mongodb
+2025-04-02 10:47:51 [INFO]: Server running on port 5001
+2025-04-02 10:47:52 [INFO]: Connected to mongodb
+2025-04-02 10:48:06 [WARN]: Failed login attempt: Email not found - diosel@gmail.com
+2025-04-02 10:48:06 [INFO]: ::1 - - [02/Apr/2025:02:48:06 +0000] "POST /api/users/login HTTP/1.1" 400 37 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 10:48:21 [WARN]: Failed login attempt: Email not found - diosel@gmail.com
+2025-04-02 10:48:21 [INFO]: ::1 - - [02/Apr/2025:02:48:21 +0000] "POST /api/users/login HTTP/1.1" 400 37 "http://localhost:5173/" "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/134.0.0.0"
+2025-04-02 10:49:37 [INFO]: User logged in successfully: richard@gmail.com (ID: 67eb655ed69e7c0934972117)
+2025-04-02 10:49:37 [INFO]: ::1 - - [02/Apr/2025:02:49:37 +0000] "POST /api/users/login HTTP/1.1" 200 318 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 10:49:38 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 10:49:38 [INFO]: ::1 - - [02/Apr/2025:02:49:38 +0000] "GET /api/users HTTP/1.1" 200 702 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 10:49:38 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 10:49:38 [INFO]: ::1 - - [02/Apr/2025:02:49:38 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 10:52:23 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 10:52:23 [INFO]: ::1 - - [02/Apr/2025:02:52:23 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 10:52:23 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 10:52:23 [INFO]: ::1 - - [02/Apr/2025:02:52:23 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 10:53:44 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 10:53:44 [INFO]: ::1 - - [02/Apr/2025:02:53:44 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 10:53:44 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 10:53:44 [INFO]: ::1 - - [02/Apr/2025:02:53:44 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:00:16 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:00:16 [INFO]: ::1 - - [02/Apr/2025:03:00:16 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:00:16 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:00:16 [INFO]: ::1 - - [02/Apr/2025:03:00:16 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:00:22 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:00:22 [INFO]: ::1 - - [02/Apr/2025:03:00:22 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:00:23 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:00:23 [INFO]: ::1 - - [02/Apr/2025:03:00:23 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:03:03 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:03:03 [INFO]: ::1 - - [02/Apr/2025:03:03:03 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:03:05 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:03:05 [INFO]: ::1 - - [02/Apr/2025:03:03:05 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:03:11 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:03:11 [INFO]: ::1 - - [02/Apr/2025:03:03:11 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:03:11 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:03:11 [INFO]: ::1 - - [02/Apr/2025:03:03:11 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:04:37 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:04:37 [INFO]: ::1 - - [02/Apr/2025:03:04:37 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:04:37 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:04:37 [INFO]: ::1 - - [02/Apr/2025:03:04:37 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:05:06 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:05:06 [INFO]: ::1 - - [02/Apr/2025:03:05:06 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:05:06 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:05:06 [INFO]: ::1 - - [02/Apr/2025:03:05:06 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:05:17 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:05:17 [INFO]: ::1 - - [02/Apr/2025:03:05:17 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:05:17 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:05:17 [INFO]: ::1 - - [02/Apr/2025:03:05:17 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:05:30 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:05:30 [INFO]: ::1 - - [02/Apr/2025:03:05:30 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:05:30 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:05:30 [INFO]: ::1 - - [02/Apr/2025:03:05:30 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:06:02 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:06:02 [INFO]: ::1 - - [02/Apr/2025:03:06:02 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:06:02 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:06:02 [INFO]: ::1 - - [02/Apr/2025:03:06:02 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:07:06 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:07:06 [INFO]: ::1 - - [02/Apr/2025:03:07:06 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:07:06 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:07:06 [INFO]: ::1 - - [02/Apr/2025:03:07:06 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:07:08 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:07:08 [INFO]: ::1 - - [02/Apr/2025:03:07:08 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:08:36 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:08:36 [INFO]: ::1 - - [02/Apr/2025:03:08:36 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:08:49 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:08:49 [INFO]: ::1 - - [02/Apr/2025:03:08:49 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:08:49 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:08:49 [INFO]: ::1 - - [02/Apr/2025:03:08:49 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:09:05 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:09:05 [INFO]: ::1 - - [02/Apr/2025:03:09:05 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:09:05 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:09:05 [INFO]: ::1 - - [02/Apr/2025:03:09:05 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:09:31 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:09:31 [INFO]: ::1 - - [02/Apr/2025:03:09:31 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:09:31 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:09:31 [INFO]: ::1 - - [02/Apr/2025:03:09:31 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:10:06 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:10:06 [INFO]: ::1 - - [02/Apr/2025:03:10:06 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:11:12 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:11:12 [INFO]: ::1 - - [02/Apr/2025:03:11:12 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:11:24 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:11:24 [INFO]: ::1 - - [02/Apr/2025:03:11:24 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:11:27 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:11:27 [INFO]: ::1 - - [02/Apr/2025:03:11:27 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-04-02 11:11:31 [INFO]: Retrieved list of all users (total: 3)
+2025-04-02 11:11:31 [INFO]: ::1 - - [02/Apr/2025:03:11:31 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
