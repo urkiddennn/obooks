@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header.jsx';
 import Sidebar from '../components/Sidebar.jsx'; // Import the new Sidebar component
 import { fetchUserData, fetchBooks } from '../api.jsx';
+import SearchBar from '../components/SearchBar.jsx';
 
 const MainView = () => {
     const [userData, setUserData] = useState(null);
@@ -45,7 +46,7 @@ const MainView = () => {
 
         getUserData();
         getBooks();
-    }, [selectedCategory, selectedSort]); 
+    }, [selectedCategory, selectedSort]);
 
     const handleCategoryChange = (category) => {
         setSelectedCategory(category.toLowerCase());
@@ -66,6 +67,7 @@ const MainView = () => {
                     onSortChange={handleSortChange}
                 />
                 <main className="flex-grow flex flex-col items-center py-8 px-4 space-y-8">
+                    <SearchBar />
                     {loadingUser ? (
                         <p className="text-gray-600">Loading user data...</p>
                     ) : (
