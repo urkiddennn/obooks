@@ -24,7 +24,7 @@ const MainView = () => {
             setLoadingBooks(true);
             let bookList = await fetchBooks(selectedCategory, currentPages);
 
-            // Apply sorting locally (since Open Library API sorting is limited)
+            // Apply sorting locally (since Open Library API sorting is limited)ss
             if (bookList.length > 0) {
                 bookList = [...bookList].sort((a, b) => {
                     if (selectedSort === 'title_asc') {
