@@ -32,7 +32,7 @@ export const fetchUserData = async () => {
 };
 
 // Fetch books from Open Library API
-export const fetchBooks = async (query = 'fiction', limit = 6) => {
+export const fetchBooks = async (query = 'fiction', limit = 10) => {
     try {
         const response = await fetch(`https://openlibrary.org/search.json?q=${query}&limit=${limit}`);
         const data = await response.json();

@@ -194,3 +194,84 @@
 2025-04-01 12:15:15 [INFO]: ::1 - - [01/Apr/2025:04:15:15 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
 2025-04-01 12:15:17 [WARN]: Access token missing in request
 2025-04-01 12:15:17 [INFO]: ::1 - - [01/Apr/2025:04:15:17 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:16:48 [INFO]: Server running on port 5001
+2025-04-01 12:16:48 [INFO]: Connected to mongodb
+2025-04-01 12:17:39 [INFO]: User logged in successfully: richard@gmail.com (ID: 67eb655ed69e7c0934972117)
+2025-04-01 12:17:39 [INFO]: ::1 - - [01/Apr/2025:04:17:39 +0000] "POST /api/users/login HTTP/1.1" 200 318 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:18:47 [WARN]: Access token missing in request
+2025-04-01 12:18:47 [INFO]: ::1 - - [01/Apr/2025:04:18:47 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:18:48 [WARN]: Access token missing in request
+2025-04-01 12:18:48 [INFO]: ::1 - - [01/Apr/2025:04:18:48 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:18:49 [WARN]: Access token missing in request
+2025-04-01 12:18:49 [INFO]: ::1 - - [01/Apr/2025:04:18:49 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:20:11 [WARN]: Access token missing in request
+2025-04-01 12:20:11 [INFO]: ::1 - - [01/Apr/2025:04:20:11 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:20:12 [WARN]: Access token missing in request
+2025-04-01 12:20:12 [INFO]: ::1 - - [01/Apr/2025:04:20:12 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:20:13 [WARN]: Access token missing in request
+2025-04-01 12:20:13 [INFO]: ::1 - - [01/Apr/2025:04:20:13 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:20:14 [WARN]: Access token missing in request
+2025-04-01 12:20:14 [INFO]: ::1 - - [01/Apr/2025:04:20:14 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:20:15 [WARN]: Access token missing in request
+2025-04-01 12:20:15 [INFO]: ::1 - - [01/Apr/2025:04:20:15 +0000] "POST /api/favorites HTTP/1.1" 401 33 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:21:43 [WARN]: Invalid or expired token: jwt malformed
+2025-04-01 12:21:43 [INFO]: ::1 - - [01/Apr/2025:04:21:43 +0000] "POST /api/favorites HTTP/1.1" 403 36 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:21:52 [INFO]: User logged in successfully: richard@gmail.com (ID: 67eb655ed69e7c0934972117)
+2025-04-01 12:21:52 [INFO]: ::1 - - [01/Apr/2025:04:21:52 +0000] "POST /api/users/login HTTP/1.1" 200 318 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:22:16 [INFO]: Book added to favorites for user 67eb655ed69e7c0934972117: Moby-Dick
+2025-04-01 12:22:16 [INFO]: ::1 - - [01/Apr/2025:04:22:16 +0000] "POST /api/favorites HTTP/1.1" 201 273 "-" "PostmanRuntime/7.43.3"
+2025-04-01 12:25:37 [INFO]: Server running on port 5001
+2025-04-01 12:25:37 [INFO]: Connected to mongodb
+2025-04-01 15:34:08 [INFO]: Server running on port 5001
+2025-04-01 15:34:08 [INFO]: Connected to mongodb
+2025-04-01 15:34:19 [INFO]: Server running on port 5001
+2025-04-01 15:34:20 [INFO]: Connected to mongodb
+2025-04-01 16:05:19 [INFO]: ::1 - - [01/Apr/2025:08:05:19 +0000] "GET /api/users/login HTTP/1.1" 404 154 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:05:31 [INFO]: Retrieved list of all users (total: 1)
+2025-04-01 16:05:31 [INFO]: ::1 - - [01/Apr/2025:08:05:31 +0000] "GET /api/users HTTP/1.1" 200 239 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:05:31 [INFO]: ::1 - - [01/Apr/2025:08:05:31 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:5001/api/users" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:09:54 [INFO]: ::1 - - [01/Apr/2025:08:09:54 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:10:06 [INFO]: Retrieved list of all users (total: 1)
+2025-04-01 16:10:06 [INFO]: ::1 - - [01/Apr/2025:08:10:06 +0000] "GET /api/users HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:10:25 [INFO]: User logged in successfully: richard@gmail.com (ID: 67eb655ed69e7c0934972117)
+2025-04-01 16:10:25 [INFO]: ::1 - - [01/Apr/2025:08:10:25 +0000] "POST /api/users/login HTTP/1.1" 200 318 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:11:26 [WARN]: Failed login attempt: Email not found - admin@gmail.com
+2025-04-01 16:11:26 [INFO]: ::1 - - [01/Apr/2025:08:11:26 +0000] "POST /api/users/login HTTP/1.1" 400 37 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:12:32 [WARN]: Failed registration attempt: Email already in use - richard@gmail.com
+2025-04-01 16:12:32 [INFO]: ::1 - - [01/Apr/2025:08:12:32 +0000] "POST /api/users HTTP/1.1" 400 32 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:12:46 [WARN]: Failed registration attempt: Email already in use - richard@gmail.com
+2025-04-01 16:12:46 [INFO]: ::1 - - [01/Apr/2025:08:12:46 +0000] "POST /api/users HTTP/1.1" 400 32 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:13:39 [INFO]: User registered successfully: me@gmail.com (ID: 67eba0338db269156de6db36)
+2025-04-01 16:13:39 [INFO]: ::1 - - [01/Apr/2025:08:13:39 +0000] "POST /api/users HTTP/1.1" 201 305 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:16:30 [INFO]: User logged in successfully: me@gmail.com (ID: 67eba0338db269156de6db36)
+2025-04-01 16:16:30 [INFO]: ::1 - - [01/Apr/2025:08:16:30 +0000] "POST /api/users/login HTTP/1.1" 200 306 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:19:45 [INFO]: User logged in successfully: me@gmail.com (ID: 67eba0338db269156de6db36)
+2025-04-01 16:19:45 [INFO]: ::1 - - [01/Apr/2025:08:19:45 +0000] "POST /api/users/login HTTP/1.1" 200 306 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:19:46 [INFO]: Retrieved list of all users (total: 2)
+2025-04-01 16:19:46 [INFO]: ::1 - - [01/Apr/2025:08:19:46 +0000] "GET /api/users HTTP/1.1" 200 471 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:19:47 [INFO]: Retrieved list of all users (total: 2)
+2025-04-01 16:19:47 [INFO]: ::1 - - [01/Apr/2025:08:19:47 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:22:00 [INFO]: Retrieved list of all users (total: 2)
+2025-04-01 16:22:00 [INFO]: ::1 - - [01/Apr/2025:08:22:00 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:24:36 [INFO]: Retrieved list of all users (total: 2)
+2025-04-01 16:24:36 [INFO]: ::1 - - [01/Apr/2025:08:24:36 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:26:35 [INFO]: Retrieved list of all users (total: 2)
+2025-04-01 16:26:35 [INFO]: ::1 - - [01/Apr/2025:08:26:35 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:26:35 [INFO]: Retrieved list of all users (total: 2)
+2025-04-01 16:26:35 [INFO]: ::1 - - [01/Apr/2025:08:26:35 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:31:21 [INFO]: Server running on port 5001
+2025-04-01 16:31:22 [INFO]: Connected to mongodb
+2025-04-01 16:31:40 [INFO]: Server running on port 5001
+2025-04-01 16:31:41 [INFO]: Connected to mongodb
+2025-04-01 16:31:44 [INFO]: Server running on port 5001
+2025-04-01 16:31:45 [INFO]: Connected to mongodb
+2025-04-01 16:33:10 [INFO]: User registered successfully: em@gmail.com (ID: 67eba4c6301e83c0a6ab218b)
+2025-04-01 16:33:10 [INFO]: ::1 - - [01/Apr/2025:08:33:10 +0000] "POST /api/users HTTP/1.1" 201 304 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:33:33 [INFO]: User logged in successfully: me@gmail.com (ID: 67eba0338db269156de6db36)
+2025-04-01 16:33:33 [INFO]: ::1 - - [01/Apr/2025:08:33:33 +0000] "POST /api/users/login HTTP/1.1" 200 306 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:33:34 [INFO]: Retrieved list of all users (total: 3)
+2025-04-01 16:33:34 [INFO]: ::1 - - [01/Apr/2025:08:33:34 +0000] "GET /api/users HTTP/1.1" 200 702 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:33:34 [INFO]: Retrieved list of all users (total: 3)
+2025-04-01 16:33:34 [INFO]: ::1 - - [01/Apr/2025:08:33:34 +0000] "GET /api/users HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-01 16:35:31 [INFO]: Server running on port 5001
+2025-04-01 16:35:31 [INFO]: Connected to mongodb

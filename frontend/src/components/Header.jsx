@@ -14,15 +14,17 @@ const Header = ({ email, profilePicture }) => {
     };
 
     return (
-        <header className="bg-white shadow-md p-4 flex justify-between items-center">
+        <header className="w-full h-20 bg-white border-b-1 flex justify-between items-center sticky z-20 ">
             <div className="text-xl font-semibold text-gray-900">Obooks</div>
-            <div className="flex items-center space-x-4">
-                <Avatar
+            <div className=" h-full flex items-center space-x-4 pr-10 justify-center">
+                <img src={profilePicture || 'https://api.dicebear.com/8.x/notionists-neutral/svg?seed=default'} alt="" className='w-12 h-12 outline-1 rounded-full' />
+                {/* <Avatar
                     size="large"
                     src={profilePicture || 'https://api.dicebear.com/8.x/notionists-neutral/svg?seed=default'} // Fallback image
-                    className="bg-blue-600"
-                />
-                <span className="text-gray-700">{email || 'User'}</span>
+                    className="bg-blue-600 outline-1 rounded-full border-2"
+
+                /> */}
+
                 <Button
                     type="primary"
                     onClick={handleLogout}
