@@ -16,6 +16,7 @@ Book Explorer is a web application that allows users to browse, search, and mana
 
 ![Main View](images/1.jpeg "Browse and search books on the Main View")
 ![Favorites Page](images/2.jpeg "View and manage your favorite books")
+![Fav](images/4.jpeg "View")
 
 ## Technologies Used
 
