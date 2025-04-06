@@ -98,3 +98,69 @@ export const registerUser = async (email, password) => {
         throw error; // Re-throw to handle in the component
     }
 };
+
+
+// ... (other imports and functions remain the same)
+
+// Toggle favorite book
+export const toggleFavoriteBook = async (bookData) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        message.error('No token found, please log in.');
+        return null;
+    }
+
+    try {
+        const response = await fetch('http://localhost:5001/api/favorites/toggle', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+            },
+            body: JSON.stringify(bookData),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || 'Failed to toggle favorite');
+        }
+
+        return data; // Return updated book data
+    } catch (error) {
+        message.error(error.message || 'An error occurred while toggling favorite');
+        console.error('Toggle favorite error:', error);
+        return null;
+    }
+};
+
+// Fetch user's favorite books
+export const fetchFavoriteBooks = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        message.error('No token found, please log in.');
+        return [];
+    }
+
+    try {
+        const response = await fetch('http://localhost:5001/api/favorites', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+            },
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || 'Failed to fetch favorite books');
+        }
+
+        return data || [];
+    } catch (error) {
+        message.error(error.message || 'An error occurred while fetching favorite books');
+        console.error('Fetch favorites error:', error);
+        return [];
+    }
+};

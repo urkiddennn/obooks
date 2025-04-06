@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header.jsx';
-import Sidebar from '../components/Sidebar.jsx'; // Import the new Sidebar component
-import { fetchUserData, fetchBooks } from '../api.jsx';
+import Sidebar from '../components/Sidebar.jsx';
+import { fetchUserData, fetchBooks, toggleFavoriteBook, fetchFavoriteBooks } from '../api.jsx';
 import SearchBar from '../components/SearchBar.jsx';
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 
 const MainView = () => {
     const [userData, setUserData] = useState(null);
     const [books, setBooks] = useState([]);
+    const [favorites, setFavorites] = useState([]);
     const [loadingUser, setLoadingUser] = useState(true);
     const [loadingBooks, setLoadingBooks] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState('fiction');
-    const [selectedSort, setSelectedSort] = useState('title_asc'); // Default sort
-    const currentPages = 10; // number of books to be displayed.
+    const [selectedSort, setSelectedSort] = useState('title_asc');
+    const currentPages = 10;
 
     useEffect(() => {
         const getUserData = async () => {
@@ -24,7 +26,6 @@ const MainView = () => {
             setLoadingBooks(true);
             let bookList = await fetchBooks(selectedCategory, currentPages);
 
-            // Apply sorting locally (since Open Library API sorting is limited)sssd
             if (bookList.length > 0) {
                 bookList = [...bookList].sort((a, b) => {
                     if (selectedSort === 'title_asc') {
@@ -44,8 +45,14 @@ const MainView = () => {
             setLoadingBooks(false);
         };
 
+        const getFavorites = async () => {
+            const favoriteBooks = await fetchFavoriteBooks();
+            setFavorites(favoriteBooks);
+        };
+
         getUserData();
         getBooks();
+        getFavorites();
     }, [selectedCategory, selectedSort]);
 
     const handleCategoryChange = (category) => {
@@ -54,6 +61,30 @@ const MainView = () => {
 
     const handleSortChange = (sortValue) => {
         setSelectedSort(sortValue);
+    };
+
+    const handleToggleFavorite = async (book) => {
+        const bookData = {
+            isbn: book.isbn?.[0] || book.key, // Use first ISBN if available, else fall back to key
+            title: book.title,
+            authors: book.author_name ? book.author_name.map(name => ({ name })) : [],
+            publish_date: book.first_publish_year || 'Unknown',
+            cover: book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : null,
+        };
+
+        const updatedBook = await toggleFavoriteBook(bookData);
+        if (updatedBook) {
+            setFavorites(prev =>
+                updatedBook.favorite
+                    ? [...prev, updatedBook]
+                    : prev.filter(fav => fav.isbn !== updatedBook.isbn)
+            );
+        }
+    };
+
+    const isFavorite = (book) => {
+        const bookIsbn = book.isbn?.[0] || book.key; // Match logic with handleToggleFavorite
+        return favorites.some(fav => fav.isbn === bookIsbn);
     };
 
     return (
@@ -107,6 +138,16 @@ const MainView = () => {
                                         <p className="text-sm text-gray-500">
                                             {book.first_publish_year || 'Unknown Year'}
                                         </p>
+                                        <button
+                                            onClick={() => handleToggleFavorite(book)}
+                                            className="text-red-500 hover:text-red-700 transition-colors duration-200"
+                                        >
+                                            {isFavorite(book) ? (
+                                                <MdFavorite size={24} />
+                                            ) : (
+                                                <MdFavoriteBorder size={24} />
+                                            )}
+                                        </button>
                                     </div>
                                 ))}
                             </div>

@@ -200,31 +200,55 @@ app.get("/api/users/me", authenticateToken, async (req, res) => {
     }
 });
 
-//add books to favorites
-app.post("/api/favorites", authenticateToken, async (req, res) => {
+
+app.post("/api/favorites/toggle", authenticateToken, async (req, res) => {
     const { isbn, title, authors, publish_date, cover } = req.body;
+
     try {
-        const book = new Books({
-            isbn,
-            title,
-            authors,
-            publish_date,
-            cover,
-            user: req.user.id,
-        });
-        await book.save();
-        logger.info(`Book added to favorites for user ${req.user.id}: ${title}`);
-        res.status(201).json(book);
+        let book = await Books.findOne({ isbn, user: req.user.id });
+
+        if (book) {
+            // Book exists, toggle favorite status
+            book.favorite = !book.favorite;
+            await book.save();
+            logger.info(`Toggled favorite status for book ${isbn} for user ${req.user.id}: ${book.favorite}`);
+            res.status(200).json(book);
+        } else {
+            // Book doesn't exist, create it with favorite = true
+            book = new Books({
+                isbn,
+                title,
+                authors,
+                publish_date,
+                cover,
+                user: req.user.id,
+                favorite: true,
+            });
+            await book.save();
+            logger.info(`Added and favorited book ${isbn} for user ${req.user.id}`);
+            res.status(201).json(book);
+        }
     } catch (err) {
         if (err.code === 11000) {
             logger.warn(`Duplicate book attempt for user ${req.user.id}: ${isbn}`);
-            return res.status(400).json({ error: "Book already in your favorites" });
+            return res.status(400).json({ error: "Book already exists with a different status" });
         }
-        logger.error(`Error saving book for user ${req.user.id}: ${err.message}`);
-        res.status(500).json({ error: "Error saving book" });
+        logger.error(`Error toggling favorite for user ${req.user.id}: ${err.message}`);
+        res.status(500).json({ error: "Error toggling favorite" });
     }
 });
 
+// Get user's favorite books
+app.get("/api/favorites", authenticateToken, async (req, res) => {
+    try {
+        const favoriteBooks = await Books.find({ user: req.user.id, favorite: true });
+        logger.info(`Retrieved ${favoriteBooks.length} favorite books for user ${req.user.id}`);
+        res.status(200).json(favoriteBooks);
+    } catch (err) {
+        logger.error(`Error retrieving favorites for user ${req.user.id}: ${err.message}`);
+        res.status(500).json({ error: "Error retrieving favorites" });
+    }
+});
 
 
 

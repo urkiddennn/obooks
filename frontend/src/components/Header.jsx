@@ -14,8 +14,10 @@ const Header = ({ email, profilePicture }) => {
         }, 1000);
     };
 
+
     return (
-        <header className="w-full h-20 bg-white border-b-1 flex justify-between items-center sticky z-20 ">
+        <header className="w-full h-20 bg-white border-b-1 flex justify-between items-center sticky z-20 p-2">
+
             <div className="text-xl font-semibold text-gray-900">Obooks</div>
 
             <div className=" h-full flex items-center space-x-4 pr-10 justify-center">

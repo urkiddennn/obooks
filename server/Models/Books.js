@@ -7,8 +7,8 @@ const bookSchema = new mongoose.Schema({
     publish_date: String,
     cover: String,
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    favorite: { type: Boolean, default: false } // Changed from 'favorate' to 'favorite'
 });
-
 
 bookSchema.index({ isbn: 1, user: 1 }, { unique: true });
 
