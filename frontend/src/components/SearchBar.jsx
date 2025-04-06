@@ -1,29 +1,29 @@
-import React from 'react'
+import React from 'react';
 import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
 const { Search } = Input;
 
-const SearchBar = () => {
+const SearchBar = ({ onSearchBooks }) => {
+    const onSearch = (value, _e, info) => {
+        if (value.trim()) {
+            onSearchBooks(value.trim());
+        }
+    };
 
-    const onSearch = (value, _e, info) =>
-        console.log(info === null || info === void 0 ? void 0 : info.source, value);
     return (
-        <div className='w-full flex justify-end'>
-            <Space direction="vertical" className=''>
-
+        <div className="w-full flex justify-end">
+            <Space direction="vertical" className="">
                 <Search
-                    placeholder="input search text"
+                    placeholder="Search books by title, author, or keyword"
                     allowClear
                     enterButton="Search Books"
                     size="large"
                     onSearch={onSearch}
-                    className='w-full'
+                    className="w-96" // Adjust width as needed
                 />
-
             </Space>
-
         </div>
-    )
-}
+    );
+};
 
-export default SearchBar
+export default SearchBar;

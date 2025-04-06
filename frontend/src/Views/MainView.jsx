@@ -13,6 +13,7 @@ const MainView = () => {
     const [loadingBooks, setLoadingBooks] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState('fiction');
     const [selectedSort, setSelectedSort] = useState('title_asc');
+    const [searchQuery, setSearchQuery] = useState(''); // New state for search query
     const currentPages = 10;
 
     useEffect(() => {
@@ -24,7 +25,8 @@ const MainView = () => {
 
         const getBooks = async () => {
             setLoadingBooks(true);
-            let bookList = await fetchBooks(selectedCategory, currentPages);
+            const query = searchQuery || selectedCategory; // Use search query if provided, else category
+            let bookList = await fetchBooks(query, currentPages);
 
             if (bookList.length > 0) {
                 bookList = [...bookList].sort((a, b) => {
@@ -53,19 +55,24 @@ const MainView = () => {
         getUserData();
         getBooks();
         getFavorites();
-    }, [selectedCategory, selectedSort]);
+    }, [selectedCategory, selectedSort, searchQuery]); // Add searchQuery to dependencies
 
     const handleCategoryChange = (category) => {
         setSelectedCategory(category.toLowerCase());
+        setSearchQuery(''); // Clear search query when category changes
     };
 
     const handleSortChange = (sortValue) => {
         setSelectedSort(sortValue);
     };
 
+    const handleSearchBooks = (query) => {
+        setSearchQuery(query);
+    };
+
     const handleToggleFavorite = async (book) => {
         const bookData = {
-            isbn: book.isbn?.[0] || book.key, // Use first ISBN if available, else fall back to key
+            isbn: book.isbn?.[0] || book.key,
             title: book.title,
             authors: book.author_name ? book.author_name.map(name => ({ name })) : [],
             publish_date: book.first_publish_year || 'Unknown',
@@ -83,7 +90,7 @@ const MainView = () => {
     };
 
     const isFavorite = (book) => {
-        const bookIsbn = book.isbn?.[0] || book.key; // Match logic with handleToggleFavorite
+        const bookIsbn = book.isbn?.[0] || book.key;
         return favorites.some(fav => fav.isbn === bookIsbn);
     };
 
@@ -98,7 +105,7 @@ const MainView = () => {
                     onSortChange={handleSortChange}
                 />
                 <main className="flex-grow flex flex-col items-center py-8 px-4 space-y-8">
-                    <SearchBar />
+                    <SearchBar onSearchBooks={handleSearchBooks} />
                     {loadingUser ? (
                         <p className="text-gray-600">Loading user data...</p>
                     ) : (
@@ -109,7 +116,9 @@ const MainView = () => {
 
                     <section className="w-full max-w-5xl">
                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                            Featured Books - {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}
+                            {searchQuery
+                                ? `Search Results for "${searchQuery}"`
+                                : `Featured Books - ${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}`}
                         </h2>
                         {loadingBooks ? (
                             <p className="text-gray-600">Loading books...</p>

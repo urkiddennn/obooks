@@ -3,6 +3,7 @@ import LoginForm from './components/loginForm.jsx';
 import { Routes, Route } from 'react-router-dom';
 import RegisterForm from './components/registerForm.jsx';
 import MainView from './Views/MainView.jsx';
+import Favorites from './Views/Favorites.jsx';
 const App = () => {
     return (
 
@@ -12,6 +13,7 @@ const App = () => {
                     <Route path='/' element={<LoginForm />} />
                     <Route path='/register' element={<RegisterForm />} />
                     <Route path='/home' element={<MainView />} />
+                    <Route path='/favorite' element={<Favorites />} />
                 </Routes>
 
             </div>

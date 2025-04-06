@@ -1,7 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Button, Avatar, message } from 'antd';
 import SearchBar from './SearchBar';
+
 
 const Header = ({ email, profilePicture }) => {
     const navigate = useNavigate();
@@ -21,6 +22,9 @@ const Header = ({ email, profilePicture }) => {
             <div className="text-xl font-semibold text-gray-900">Obooks</div>
 
             <div className=" h-full flex items-center space-x-4 pr-10 justify-center">
+                <Link to="/home" className="hover:text-gray-300 font-bold">Home</Link>
+                <Link to="/favorite" className="hover:text-gray-300 font-bold">Favorites</Link>
+
                 <img src={profilePicture || 'https://api.dicebear.com/8.x/notionists-neutral/svg?seed=default'} alt="" className='w-12 h-12 outline-1 rounded-full' />
                 {/* <Avatar
                     size="large"

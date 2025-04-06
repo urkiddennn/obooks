@@ -32,9 +32,10 @@ export const fetchUserData = async () => {
 };
 
 // Fetch books from Open Library API
+// api.jsx (excerpt)
 export const fetchBooks = async (query = 'fiction', limit = 10) => {
     try {
-        const response = await fetch(`https://openlibrary.org/search.json?q=${query}&limit=${limit}`);
+        const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=${limit}`);
         const data = await response.json();
 
         if (!response.ok) {
@@ -100,7 +101,6 @@ export const registerUser = async (email, password) => {
 };
 
 
-// ... (other imports and functions remain the same)
 
 // Toggle favorite book
 export const toggleFavoriteBook = async (bookData) => {
